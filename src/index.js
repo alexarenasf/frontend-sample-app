@@ -1,15 +1,10 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import { createRoot } from 'react-dom/client';
 
-import AppRouter from './components/app_router'
+import Layout from './components/layout'
 
 import './stylesheets/index.scss'
 
-const root = document.createElement('div')
-root.setAttribute('id', 'root')
-document.body.appendChild(root)
-
-ReactDom.render(
-  <AppRouter />,
-  document.getElementById('root')
-)
+document.body.innerHTML = '<div id="root"></div>';
+const root = createRoot(document.getElementById('root'));
+root.render(<Layout />);
